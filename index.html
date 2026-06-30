@@ -22,9 +22,9 @@
     --carpet: #9E2B1E;
     --carpet-soft: #B4402F;
     --evergreen: #3A7A5C;
-    --muted: #6E6658;
-    --rule: #1E25581F;
-    --rule-strong: #1E255838;
+    --muted: #5A5346;
+    --rule: #1E25582E;
+    --rule-strong: #1E255846;
   }
 
   html, body {
@@ -1804,6 +1804,58 @@
   /* keep the last beat crisp (not dimmed as "past") while the paper opens up */
   section.slide.opener-half:has(.outro-flag.range-on) .feed-track .pbeat { opacity: 1; }
 
+  /* v4-5: claim walkthrough, fades in over the freed right-hand space once the
+     outro curtain has fully retracted the photo (paired with the outro step). */
+  section.slide.opener-half .claim-walkthrough {
+    position: absolute;
+    top: 50%;
+    right: 110px;
+    transform: translateY(-50%);
+    width: 480px;
+    padding: 36px 40px;
+    background: var(--paper);
+    border: 1px solid var(--rule-strong, var(--rule));
+  }
+  section.slide.opener-half .claim-walkthrough .cw-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--carpet);
+    margin-bottom: 14px;
+  }
+  section.slide.opener-half .claim-walkthrough .cw-claim {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  section.slide.opener-half .claim-walkthrough .cw-path {
+    font-size: 19px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  section.slide.opener-half .claim-walkthrough .cw-mech {
+    font-weight: 600;
+    color: var(--indigo);
+  }
+  section.slide.opener-half .claim-walkthrough .cw-mode {
+    font-weight: 600;
+    color: var(--carpet);
+  }
+  section.slide.opener-half .claim-walkthrough .cw-arrow {
+    margin: 0 8px;
+    color: var(--muted);
+  }
+  section.slide.opener-half .claim-walkthrough .cw-cite {
+    font-size: 16px;
+    color: var(--muted);
+    margin-top: 18px;
+  }
+
   /* Slow the watercolor pans 5× (v4-2 used 40s/56s) so the image drifts almost
      imperceptibly — the calm, slow parallax of an Apple product page. Keyframes
      and direction are inherited; only the duration changes. */
@@ -2249,53 +2301,9 @@
     </div>
   </section>
 
-  <!-- 2. COMMITTEE -->
-  <section class="slide dark" data-label="02 Committee">
-    <div class="slide-number">02 / 17</div>
-    <img src="assets/emlyon-storm-logo.png" alt="emlyon business school · STORM research center"
-         style="position: absolute; top: 56px; right: 64px; height: 96px; display: block; z-index: 3;" />
-    <div class="frame s2-frame">
-      <div class="eyebrow" style="color: #C8A86A; font-size: 22px; letter-spacing: 0.30em; text-transform: uppercase; font-weight: 500;">
-        Dissertation Committee
-      </div>
-
-      <div class="committee-block" style="margin-top: 80px;">
-        <div class="cm-label">Supervisors</div>
-        <div class="cm-row">
-          <div class="cm-member">
-            <div class="cm-name">Bernard Forgues</div>
-            <div class="cm-aff">emlyon business school</div>
-          </div>
-          <div class="cm-member">
-            <div class="cm-name">Christof Brandtner</div>
-            <div class="cm-aff">emlyon business school</div>
-          </div>
-          <div class="cm-member">
-            <div class="cm-name">Giada Di Stefano</div>
-            <div class="cm-aff">Bocconi University</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="committee-block" style="margin-top: 64px;">
-        <div class="cm-label">External Examiners</div>
-        <div class="cm-row">
-          <div class="cm-member">
-            <div class="cm-name">Renate E. Meyer</div>
-            <div class="cm-aff">WU Vienna University of Economics and Business</div>
-          </div>
-          <div class="cm-member">
-            <div class="cm-name">Ana Aranda</div>
-            <div class="cm-aff">University of Amsterdam</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- 3. SKY SHOWCASE, color, no text -->
   <section class="slide dark" data-label="03 Sky Showcase">
-    <div class="slide-number">03 / 17</div>
+    <div class="slide-number">02 / 11</div>
     <img src="assets/emlyon-storm-logo.png" alt="emlyon business school · STORM research center"
          style="position: absolute; top: 40px; right: 50px; height: 56px; display: block; z-index: 3;" />
     <svg class="title-stars sky-showcase" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -2391,7 +2399,7 @@
 
   <!-- 4. SKY + MEANING STRUCTURES QUOTE -->
   <section class="slide dark" data-label="04 Meaning Quote">
-    <div class="slide-number">04 / 17</div>
+    <div class="slide-number">03 / 11</div>
     <img src="assets/emlyon-storm-logo.png" alt="emlyon business school · STORM research center"
          style="position: absolute; top: 40px; right: 50px; height: 56px; display: block; z-index: 3;" />
     <svg class="title-stars sky-showcase" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -2497,24 +2505,23 @@
 
   <!-- WE LIVE IN AN EVALUATIVE SOCIETY -->
   <section class="slide paper" data-label="Evaluative Society">
-    <div class="slide-number">05 / 17</div>
+    <div class="slide-number">04 / 11</div>
     <div class="frame" style="justify-content: flex-start; padding-top: 130px;">
-      <div class="eyebrow">Why this matters now</div>
       <div class="title-l serif" style="margin-top: 20px; max-width: 1700px; font-size: 78px; line-height: 1.04;">
         We live in an <em>evaluative society</em>.
       </div>
       <div class="hrule" style="margin-top: 34px;"></div>
       <div class="es-beats">
         <div class="es-beat" data-step="1">
-          <div class="es-body">For a century, experts set what counts as good, and audiences inherited the criteria. Now platforms let millions judge the same objects beside them, yet either way the framework <em>produces</em> the worth it appears to measure.</div>
+          <div class="es-body">From a world of expert authorities to coexistence with online aggregate platforms.</div>
           <div class="cite">Espeland &amp; Sauder 2007 &middot; Karpik 2010 &middot; Brandtner 2017</div>
         </div>
         <div class="es-beat" data-step="2">
-          <div class="es-body">In newer domains, from pandemics to dual-use biology, the criteria are unsettled and contested. They have to be built before any claim can be judged.</div>
+          <div class="es-body">Criteria are not always settled.</div>
           <div class="cite">Patriotta et&nbsp;al. 2025 &middot; Vaara et&nbsp;al. 2024</div>
         </div>
         <div class="es-beat es-punch" data-step="3">
-          <div class="es-body">And once criteria harden into institutions, they turn invisible, taken for granted as how things simply are. The puzzle becomes how they endure across generations of change.</div>
+          <div class="es-body">And once criteria harden into institutions, they persist.</div>
           <div class="cite">Berger &amp; Luckmann 1966 &middot; Dacin et&nbsp;al. 2010</div>
         </div>
       </div>
@@ -2522,112 +2529,9 @@
   </section>
 
 
-  <!-- CONSTRUCT, what a meaning structure is + the double work it does -->
-  <section class="slide paper" data-label="06b The Construct">
-    <div class="slide-number">06 / 17</div>
-    <div class="frame" style="justify-content: flex-start; padding-top: 130px;">
-      <div class="eyebrow">The construct</div>
-      <div class="title-l serif" style="margin-top: 20px; max-width: 1700px; font-size: 76px; line-height: 1.03;">
-        <em>Meaning structures</em> in organizational and institutional life.
-      </div>
-      <div class="hrule" style="margin-top: 30px;"></div>
-      <div class="body-lg" data-step="1" style="max-width: 1500px; margin-top: 8px;">
-        Justifications, evaluative frameworks, and institutions are all meaning structures: shared, durable systems of categories and relations that people <em>mobilize</em> to judge, <em>construct</em> into new frameworks, and reproduce so they <em>last</em>.
-      </div>
-      <div data-step="2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 90px; margin-top: 52px;">
-        <div>
-          <div class="kicker" style="color: var(--carpet); margin-bottom: 12px;">It enables</div>
-          <div class="title-s serif" style="font-size: 46px; line-height: 1.12;">It makes evaluation <em>possible</em>.</div>
-        </div>
-        <div>
-          <div class="kicker" style="color: var(--carpet); margin-bottom: 12px;">It sorts</div>
-          <div class="title-s serif" style="font-size: 46px; line-height: 1.12;">It sorts what is allowed to <em>enter</em>.</div>
-        </div>
-      </div>
-      <div class="body-sm" data-step="3" style="margin-top: 32px;"><span class="cite">Podolny 2005 &middot; Bowker &amp; Star 1999 &middot; Espeland &amp; Stevens 1998</span></div>
-    </div>
-  </section>
-
-  <!-- CONSTRUCT B, three operations on meaning structures (previews the three studies) -->
-
-  <!-- 5. QUESTION (was slide 3, meaning quote moved to slide 4) -->
-  <section class="slide paper" data-label="05 Three Studies">
-    <div class="slide-number">07 / 16</div>
-  <div class="frame wide" style="padding-top: 80px;">
-    <div style="text-align:center;">
-      <div class="title-m serif">Three studies of <em>meaning structures</em>.</div>
-      <svg class="phenomena-band" style="display:block; margin:24px auto 34px;" viewBox="0 0 1500 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-        <rect x="20" y="40" width="1460" height="20" fill="none" stroke="#B58F3A" stroke-width="1"/>
-        <g stroke="#B58F3A" stroke-width="0.8" opacity="0.55">
-          <line x1="40" y1="40" x2="40" y2="60"/>
-          <line x1="120" y1="40" x2="120" y2="60"/>
-          <line x1="200" y1="40" x2="200" y2="60"/>
-          <line x1="280" y1="40" x2="280" y2="60"/>
-          <line x1="360" y1="40" x2="360" y2="60"/>
-          <line x1="440" y1="40" x2="440" y2="60"/>
-          <line x1="520" y1="40" x2="520" y2="60"/>
-          <line x1="600" y1="40" x2="600" y2="60"/>
-          <line x1="900" y1="40" x2="900" y2="60"/>
-          <line x1="980" y1="40" x2="980" y2="60"/>
-          <line x1="1060" y1="40" x2="1060" y2="60"/>
-          <line x1="1140" y1="40" x2="1140" y2="60"/>
-          <line x1="1220" y1="40" x2="1220" y2="60"/>
-          <line x1="1300" y1="40" x2="1300" y2="60"/>
-          <line x1="1380" y1="40" x2="1380" y2="60"/>
-          <line x1="1460" y1="40" x2="1460" y2="60"/>
-        </g>
-        <g fill="#B58F3A" opacity="0.6">
-          <circle cx="80" cy="50" r="1.6"/><circle cx="160" cy="50" r="1.6"/>
-          <circle cx="240" cy="50" r="1.6"/><circle cx="320" cy="50" r="1.6"/>
-          <circle cx="400" cy="50" r="1.6"/><circle cx="480" cy="50" r="1.6"/>
-          <circle cx="560" cy="50" r="1.6"/>
-          <circle cx="940" cy="50" r="1.6"/><circle cx="1020" cy="50" r="1.6"/>
-          <circle cx="1100" cy="50" r="1.6"/><circle cx="1180" cy="50" r="1.6"/>
-          <circle cx="1260" cy="50" r="1.6"/><circle cx="1340" cy="50" r="1.6"/>
-          <circle cx="1420" cy="50" r="1.6"/>
-        </g>
-        <!-- Center pendant medallion -->
-        <g transform="translate(750 50)">
-          <rect x="-95" y="-32" width="190" height="64" fill="#FAF6EE" stroke="#B58F3A" stroke-width="1"/>
-          <circle r="22" fill="#F4EFE3"/>
-          <circle r="22" fill="none" stroke="#B58F3A" stroke-width="1.2"/>
-          <circle r="13" fill="none" stroke="#B58F3A" stroke-width="0.8"/>
-          <circle r="3.5" fill="#B58F3A"/>
-          <g stroke="#B58F3A" stroke-width="0.7" opacity="0.55">
-            <line x1="-19" y1="0" x2="-15" y2="0"/>
-            <line x1="19" y1="0" x2="15" y2="0"/>
-            <line x1="0" y1="-19" x2="0" y2="-15"/>
-            <line x1="0" y1="19" x2="0" y2="15"/>
-          </g>
-        </g>
-      </svg>
-    </div>
-    <div class="synth-table">
-      <div class="row">
-        <div class="cell head">·</div>
-        <div class="cell study-head"><span class="n">STUDY 01</span>Social <em class="dh">evaluation</em></div>
-        <div class="cell study-head"><span class="n">STUDY 02</span>Responsible <em class="dh">governance</em></div>
-        <div class="cell study-head"><span class="n">STUDY 03</span>Social <em class="dh">sustainability</em></div>
-      </div>
-      <div class="row">
-        <div class="cell head" data-step="1">Operation</div>
-        <div class="cell" data-step="1" style="color: var(--indigo); font-weight: 600;">Mobilized</div>
-        <div class="cell" data-step="1" style="color: var(--indigo); font-weight: 600;">Constructed</div>
-        <div class="cell" data-step="1" style="color: var(--indigo); font-weight: 600;">Sustained</div>
-      </div>
-      <div class="row">
-        <div class="cell head" data-step="2">Level</div>
-        <div class="cell" data-step="2" style="font-style: italic; color: var(--indigo);">Individual</div>
-        <div class="cell" data-step="2" style="font-style: italic; color: var(--indigo);">Collective</div>
-        <div class="cell" data-step="2" style="font-style: italic; color: var(--indigo);">Institutional</div>
-      </div>
-    </div>
-  </div>
-</section>
-
   <!-- 6. STUDY 1 OPENER -->
     <section class="slide opener-half opener-michelin s1-custom" data-label="Study 1">
-    <div class="slide-number">09 / 16</div>
+    <div class="slide-number">05 / 11</div>
     <div class="opener-grid">
       <div class="opener-text">
         <div class="text-frame study-spread">
@@ -2741,7 +2645,7 @@
   </section>
 
   <section class="slide opener-half opener-nsabb" data-label="Study 2">
-    <div class="slide-number">09 / 16</div>
+    <div class="slide-number">06 / 11</div>
     <div class="opener-grid">
       <div class="opener-text">
         <div class="text-frame study-spread">
@@ -2776,28 +2680,33 @@
           </div>
           <div class="pbeat dwell" data-step="5">
             <div class="beat-label">Finding</div>
-            <div class="beat-body">Tracing the U.S. NSABB on gain-of-function research, three mechanisms are deployed and resolve eleven contested claims through four settlement modes: narrowing, bracketing, rejection, precaution.</div>
+            <div class="beat-body">Tracing the U.S. NSABB on gain-of-function research, three constitutive mechanisms, scope and relevance filtering, standards of acceptable evidence, and ethical frameworks, plus a supporting mechanism, procedural legitimacy, resolve eleven contested claims through four settlement modes: narrowing and incorporation, bracketing, rejection, precaution.</div>
           </div>
             </div>
           </div>
         </div>
       </div>
       <div class="opener-image"><img src="assets/study2-nsabb-web.jpg" alt="NSABB gain-of-function deliberations" /></div>
-    </div>
-  </section>
-
-  <section class="slide pm-slide" data-label="12 Study 2 Process Model">
-    <div class="slide-number">10 / 16</div>
-    <div class="pm-figure">
-      <img class="pm-band pm-base" src="assets/study2-process-model.png" alt="The process model of collective evaluative framework construction (NSABB)" style="clip-path: inset(0 0 73.5% 0); -webkit-clip-path: inset(0 0 73.5% 0);" />
-      <img class="pm-band" data-step="1" src="assets/study2-process-model.png" alt="The process model of collective evaluative framework construction (NSABB)" style="clip-path: inset(26.5% 0 60% 0); -webkit-clip-path: inset(26.5% 0 60% 0);" />
-      <img class="pm-band" data-step="2" src="assets/study2-process-model.png" alt="The process model of collective evaluative framework construction (NSABB)" style="clip-path: inset(40% 0 14.4% 0); -webkit-clip-path: inset(40% 0 14.4% 0);" />
-      <img class="pm-band" data-step="3" src="assets/study2-process-model.png" alt="The process model of collective evaluative framework construction (NSABB)" style="clip-path: inset(85.6% 0 0 0); -webkit-clip-path: inset(85.6% 0 0 0);" />
+      <div class="claim-walkthrough" data-step="6">
+        <div class="cw-label">Example &middot; Claim 3</div>
+        <div class="cw-claim">&ldquo;The jurisdiction was already adequately regulated.&rdquo;</div>
+        <div class="cw-path">
+          <span class="cw-mech">Standards of acceptable evidence</span>
+          <span class="cw-arrow">&rarr;</span>
+          <span class="cw-note">no direct evidence on the comparative international research environment</span>
+        </div>
+        <div class="cw-path">
+          <span class="cw-mech">Settlement mode</span>
+          <span class="cw-arrow">&rarr;</span>
+          <span class="cw-mode">Rejection</span>
+        </div>
+        <div class="cw-cite">NSABB 2016, Finding 3</div>
+      </div>
     </div>
   </section>
 
   <section class="slide opener-half opener-nsabb expanded" data-label="Study 2 Contribution">
-    <div class="slide-number">11 / 16</div>
+    <div class="slide-number">07 / 11</div>
     <div class="opener-grid">
       <div class="opener-text">
         <div class="text-frame study-spread">
@@ -2823,7 +2732,7 @@
   </section>
 
   <section class="slide opener-half opener-vienna" data-label="Study 3">
-    <div class="slide-number">12 / 16</div>
+    <div class="slide-number">08 / 11</div>
     <div class="opener-grid">
       <div class="opener-text">
         <div class="text-frame study-spread">
@@ -2878,8 +2787,81 @@
 
 
   <!-- 18. SYNTHESIS FULL -->
-  <section class="slide paper" data-label="18 Synthesis">
-    <div class="slide-number">13 / 16</div>
+
+
+  <!-- METHODOLOGICAL CONTRIBUTION, computational text analysis + causal inference -->
+  <section class="slide paper" data-label="16 Methodological Contribution">
+    <div class="slide-number">09 / 11</div>
+    <div class="frame" style="justify-content: flex-start; padding-top: 108px;">
+      <div class="eyebrow">A methodological contribution</div>
+      <div class="title-m serif" style="margin-top: 22px; max-width: 1680px;">
+        Measuring a structure that lives in relations among elements and shifts over time.
+      </div>
+      <div class="hrule" style="margin-top: 26px;"></div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 70px; margin-top: 44px; max-width: 1400px;">
+        <div data-step="1">
+          <div class="kicker" style="color: var(--carpet); margin-bottom: 16px;">Topic modeling</div>
+          <div class="body" style="font-size: 34px; line-height: 1.35;">Inductively surfaces latent dimensions of meaning in large corpora. <span class="cite">BERTopic &middot; Dynamic Topic Modeling</span></div>
+        </div>
+        <div data-step="2">
+          <div class="kicker" style="color: var(--carpet); margin-bottom: 16px;">Word embeddings</div>
+          <div class="body" style="font-size: 34px; line-height: 1.35;">Turn theoretical constructs into continuous, measurable semantic distances. <span class="cite">Consistency-with-expert &middot; KL divergence</span></div>
+        </div>
+      </div>
+      <div class="body" data-step="3" style="margin-top: 36px; max-width: 1400px; font-size: 34px; line-height: 1.35;">Causal inference and qualitative work complemented these tools. <span class="cite">Grimmer et&nbsp;al. 2022 &middot; Nelson 2020</span></div>
+
+    </div>
+  </section>
+
+  <!-- 19. IMPLICATIONS + FUTURE RESEARCH (merged) -->
+  <section class="slide" data-label="19 Implications + Future">
+    <div class="slide-number">10 / 11</div>
+    <div class="frame" style="position: relative; z-index: 2; justify-content: center;">
+      <div class="impl-rows" style="display: flex; flex-direction: column; gap: 56px;">
+        <div class="impl-row" data-step="1" style="display: flex; align-items: baseline; gap: 28px; border-bottom: 1px solid var(--rule); padding-bottom: 28px;">
+          <div class="title-s serif" style="font-size: 44px; color: var(--ink); white-space: nowrap;">Symbolic&ndash;discursive foundations</div>
+          <div class="cite" style="font-size: 22px;">Meyer et&nbsp;al. 2024 &middot; Meyer et&nbsp;al. 2021 &middot; Meyer et&nbsp;al. 2018 &middot; Jancsary 2026</div>
+        </div>
+        <div class="impl-row" data-step="2" style="display: flex; align-items: baseline; gap: 28px; border-bottom: 1px solid var(--rule); padding-bottom: 28px;">
+          <div class="title-s serif" style="font-size: 44px; color: var(--ink); white-space: nowrap;">Construction of value</div>
+          <div class="cite" style="font-size: 22px;">Karpik 2010 &middot; Kornberger et&nbsp;al. 2015, 2017 &middot; Fourcade &amp; Healy 2024</div>
+        </div>
+        <div class="impl-row" data-step="3" style="display: flex; align-items: baseline; gap: 28px;">
+          <div class="title-s serif" style="font-size: 44px; color: var(--ink); white-space: nowrap;">Structure&ndash;agency</div>
+          <div class="cite" style="font-size: 22px;">Boltanski &amp; Th&eacute;venot 2006 &middot; Bourdieu 1984 &middot; Swidler 1986 &middot; Tost 2011</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 20. LIMITATIONS -->
+  
+
+  <!-- 21. CLOSING -->
+  <section class="slide dark" data-label="21 Closing">
+    <div class="slide-number">11 / 11</div>
+    <img src="assets/emlyon-storm-logo.png" alt="emlyon · STORM"
+         style="position: absolute; top: 56px; right: 64px; height: 80px; z-index: 3;" />
+    <div class="frame" style="position: relative; z-index: 2; justify-content: center;">
+      <div class="title-xl serif bumper-sticker" style="color: var(--paper); font-size: 240px; line-height: 0.95;">
+        Thank you
+      </div>
+      <div class="hrule" style="margin-top: 60px; background: #FFFFFF44;"></div>
+      <div class="body-lg" style="color: #D9D4C4; max-width: 1500px; margin-top: 28px;">
+        With gratitude to my committee, coauthors, and colleagues.
+      </div>
+      <div style="margin-top: 80px;">
+        <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--paper);">Parham Ashur</div>
+        <div class="mono" style="font-size: 24px; color: #B7BAD4; letter-spacing: 0.18em; margin-top: 10px;">
+          06 JULY 2026 · EMLYON BUSINESS SCHOOL · LYON
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide appendix" data-label="A1 Synthesis Overview">
+    <div class="appendix-ribbon">Appendix &middot; Overview</div>
   <div class="frame wide" style="padding-top: 80px;">
     <div style="text-align:center;">
       <div class="title-m serif">Three studies of <em>meaning structures</em>.</div>
@@ -2949,117 +2931,38 @@
         <div class="cell" style="font-style: italic; color: var(--indigo);">Institutional</div>
       </div>
       <div class="row">
-        <div class="cell head" data-step="1">Research question</div>
-        <div class="cell" data-step="1">How do expert endorsements shape the justifications lay evaluators use?</div>
-        <div class="cell" data-step="1">How do expert audiences construct evaluative frameworks for contested professional claims?</div>
-        <div class="cell" data-step="1">How do institutionalized meaning structures persist across long periods of change?</div>
+        <div class="cell head">Research question</div>
+        <div class="cell">How do expert endorsements shape the justifications lay evaluators use?</div>
+        <div class="cell">How do expert audiences construct evaluative frameworks for contested professional claims?</div>
+        <div class="cell">How do institutionalized meaning structures persist across long periods of change?</div>
       </div>
       <div class="row">
-        <div class="cell head" data-step="2">Theoretical lens</div>
-        <div class="cell" data-step="2">Culture as toolkit · Orders of worth · Market intermediation</div>
-        <div class="cell" data-step="2">System of professions · Collective evaluative framework</div>
-        <div class="cell" data-step="2">Social construction of reality · New structuralism</div>
+        <div class="cell head">Theoretical lens</div>
+        <div class="cell">Culture as toolkit · Orders of worth · Market intermediation</div>
+        <div class="cell">System of professions · Collective evaluative framework</div>
+        <div class="cell">Social construction of reality · New structuralism</div>
       </div>
       <div class="row">
-        <div class="cell head" data-step="3">Empirical context</div>
-        <div class="cell" data-step="3">6,000+ Google reviews of Michelin-starred French restaurants · 2014–2025</div>
-        <div class="cell" data-step="3">U.S. NSABB deliberations on gain-of-function research · 2014–2016</div>
-        <div class="cell" data-step="3">140-year corpus of Vienna administrative reports · 1867–2009</div>
+        <div class="cell head">Empirical context</div>
+        <div class="cell">6,000+ Google reviews of Michelin-starred French restaurants · 2014–2025</div>
+        <div class="cell">U.S. NSABB deliberations on gain-of-function research · 2014–2016</div>
+        <div class="cell">140-year corpus of Vienna administrative reports · 1867–2009</div>
       </div>
       <div class="row">
-        <div class="cell head" data-step="4">Method</div>
-        <div class="cell" data-step="4">BERTopic · word embeddings · difference-in-differences</div>
-        <div class="cell" data-step="4">Qualitative coding · archival analysis</div>
-        <div class="cell" data-step="4">Dynamic Topic Modeling · KL divergence</div>
+        <div class="cell head">Method</div>
+        <div class="cell">BERTopic · word embeddings · difference-in-differences</div>
+        <div class="cell">Qualitative coding · archival analysis</div>
+        <div class="cell">Dynamic Topic Modeling · KL divergence</div>
       </div>
       <div class="row mechanism">
-        <div class="cell head" data-step="5" style="color: var(--carpet)">Mechanism</div>
-        <div class="cell" data-step="5" style="color: var(--carpet); font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 30px; font-weight: 500;">Selective compliance</div>
-        <div class="cell" data-step="5" style="color: var(--carpet); font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 30px; font-weight: 500;">Collective evaluative framework construction</div>
-        <div class="cell" data-step="5" style="color: var(--carpet); font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 30px; font-weight: 500;">Dynamic re-instantiation</div>
+        <div class="cell head" style="color: var(--carpet)">Mechanism</div>
+        <div class="cell" style="color: var(--carpet); font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 30px; font-weight: 500;">Selective compliance</div>
+        <div class="cell" style="color: var(--carpet); font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 30px; font-weight: 500;">Collective evaluative framework construction</div>
+        <div class="cell" style="color: var(--carpet); font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 30px; font-weight: 500;">Dynamic re-instantiation</div>
       </div>
     </div>
   </div>
 </section>
-
-  <!-- METHODOLOGICAL CONTRIBUTION, computational text analysis + causal inference -->
-  <section class="slide paper" data-label="16 Methodological Contribution">
-    <div class="slide-number">14 / 16</div>
-    <div class="frame" style="justify-content: flex-start; padding-top: 108px;">
-      <div class="eyebrow">A methodological contribution</div>
-      <div class="title-m serif" style="margin-top: 22px; max-width: 1680px;">
-        Measuring a structure that lives in relations among elements and shifts over time.
-      </div>
-      <div class="hrule" style="margin-top: 26px;"></div>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 70px; margin-top: 44px; max-width: 1400px;">
-        <div data-step="1">
-          <div class="kicker" style="color: var(--carpet); margin-bottom: 16px;">Topic modeling</div>
-          <div class="body" style="font-size: 34px; line-height: 1.35;">Inductively surfaces latent dimensions of meaning in large corpora. <span class="cite">BERTopic &middot; Dynamic Topic Modeling</span></div>
-        </div>
-        <div data-step="2">
-          <div class="kicker" style="color: var(--carpet); margin-bottom: 16px;">Word embeddings</div>
-          <div class="body" style="font-size: 34px; line-height: 1.35;">Turn theoretical constructs into continuous, measurable semantic distances. <span class="cite">Consistency-with-expert &middot; KL divergence</span></div>
-        </div>
-      </div>
-      <div class="body" data-step="3" style="margin-top: 36px; max-width: 1400px; font-size: 34px; line-height: 1.35;">Causal inference and qualitative work complemented these tools. <span class="cite">Grimmer et&nbsp;al. 2022 &middot; Nelson 2020</span></div>
-
-    </div>
-  </section>
-
-  <!-- 19. IMPLICATIONS + FUTURE RESEARCH (merged) -->
-  <section class="slide" data-label="19 Implications + Future">
-    <div class="slide-number">15 / 16</div>
-    <div class="frame" style="position: relative; z-index: 2;">
-      <div class="slide-header">
-        <div class="eyebrow">Where the argument travels</div>
-      </div>
-      <div class="title-m serif impl-title" style="margin-top: 26px; margin-bottom: 32px;">
-        Broader connections to the <em>conversations</em> in the literature, on the symbolic foundations of institutions, the construction of value, and the relation of structure and agency.
-      </div>
-      <div class="rule-h" style="margin-bottom: 48px;"></div>
-      <div class="three-col impl-cols">
-        <div data-step="1">
-          <div class="kicker col-head" style="color: var(--carpet); margin-bottom: 18px;">Symbolic-discursive foundations</div>
-          <div class="body">Institutions are constituted through symbols, not labeled by them after the fact <span class="cite">(Meyer et&nbsp;al. 2024; Meyer et&nbsp;al. 2021)</span>. Dynamic Modeling of Discourse renders that constitutive work empirically tractable across long durations. <em>Future:</em> extend to the visual and material registers the program treats as constitutive <span class="cite">(Meyer et&nbsp;al. 2018; Jancsary 2026)</span>.</div>
-        </div>
-        <div data-step="2">
-          <div class="kicker col-head" style="color: var(--carpet); margin-bottom: 18px;">Construction of value</div>
-          <div class="body">The same evaluative device from two sides, under assembly in Study 2 and once installed in Study 1 <span class="cite">(Karpik 2010; Kornberger et&nbsp;al. 2015, 2017)</span>. <em>Future:</em> comparative cases in pandemics, financial risk, and AI governance <span class="cite">(Fourcade &amp; Healy 2024)</span>.</div>
-        </div>
-        <div data-step="3">
-          <div class="kicker col-head" style="color: var(--carpet); margin-bottom: 18px;">Structure&ndash;agency</div>
-          <div class="body">Three operations of agency within meaning, selective compliance, framework construction, and dynamic re-instantiation <span class="cite">(Boltanski &amp; Th&eacute;venot 2006; Bourdieu 1984; Swidler 1986)</span>. <em>Future:</em> experimental tests of selective compliance <span class="cite">(Tost 2011)</span>.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 20. LIMITATIONS -->
-  
-
-  <!-- 21. CLOSING -->
-  <section class="slide dark" data-label="21 Closing">
-    <div class="slide-number">16 / 16</div>
-    <img src="assets/emlyon-storm-logo.png" alt="emlyon · STORM"
-         style="position: absolute; top: 56px; right: 64px; height: 80px; z-index: 3;" />
-    <div class="frame" style="position: relative; z-index: 2; justify-content: center;">
-      <div class="eyebrow" style="color: var(--carpet-soft); margin-bottom: 28px;">Thank you</div>
-      <div class="title-xl serif bumper-sticker" style="color: var(--paper); font-size: 240px; line-height: 0.95;">
-        Questions?
-      </div>
-      <div class="hrule" style="margin-top: 60px; background: #FFFFFF44;"></div>
-      <div class="body-lg" style="color: #D9D4C4; max-width: 1500px; margin-top: 28px;">
-        With gratitude to my committee, coauthors, and colleagues.
-      </div>
-      <div style="margin-top: 80px;">
-        <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--paper);">Parham Ashur</div>
-        <div class="mono" style="font-size: 24px; color: #B7BAD4; letter-spacing: 0.18em; margin-top: 10px;">
-          06 JULY 2026 · EMLYON BUSINESS SCHOOL · LYON
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ============= APPENDIX (5 backup slides) ============= -->
 
