@@ -1796,12 +1796,17 @@
     inset: 0;
     display: flex;
     align-items: center;
+    background: var(--paper);
+    z-index: 1;
+    transform: none !important; /* suppress [data-step] translateY slide */
   }
   .s2-contrib-overlay .pbeat {
     position: static !important;
     height: auto !important;
     opacity: 1 !important;
     transform: none;
+    max-width: 780px;
+    width: 100%;
   }
 
   /* slide-number sits over the text column on spreads, not the image */
