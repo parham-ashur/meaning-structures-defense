@@ -44,7 +44,7 @@
     if (track) {
       // Clamp to the last beat so extra steps (e.g. the full-bleed/expand outro)
       // don't scroll the feed past its content.
-      var nb = track.querySelectorAll('.pbeat').length || 1;
+      var nb = track.children.length || 1;
       var slot = Math.min(cur, nb);
       track.style.transform = 'translateY(' + ((slot - 1) * -100) + '%)';
     }
