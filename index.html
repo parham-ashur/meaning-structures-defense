@@ -1821,6 +1821,15 @@
   /* v4-5: claim walkthrough, fades in over the freed right-hand space once the
      outro curtain has fully retracted the photo (paired with the outro step). */
   section.slide.opener-half .claim-walkthrough {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.45s ease;
+  }
+  section.slide.opener-half .claim-walkthrough.range-on {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  section.slide.opener-half .claim-walkthrough {
     position: absolute;
     top: 50%;
     right: 90px;
@@ -2660,8 +2669,7 @@
     <div class="opener-grid">
       <div class="opener-text">
         <div class="text-frame study-spread">
-          <span class="outro-flag" data-step="6" data-show-from="6" data-show-to="6" style="display:none" aria-hidden="true"></span>
-          <span class="s2-expand" data-show-from="5" data-show-to="6" style="display:none" aria-hidden="true"></span>
+          <span class="s2-expand" data-show-from="5" data-show-to="5" style="display:none" aria-hidden="true"></span>
           <div class="study-marker"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="label">Study 02</span></div>
           <div class="spread-head">
             <div class="title-l serif" style="color: var(--ink); max-width: 760px; font-size: 78px; line-height: 1.0;">Evaluation under <em>Construction</em></div>
@@ -2689,12 +2697,12 @@
               <div style="padding-top: 18px;"><em>Qualitative.</em> Two-stage coding: eleven contested claims.</div>
             </div>
           </div>
-          <div class="pbeat dwell" data-step="6">
+          <div class="pbeat dwell" data-step="5">
             <div class="beat-label">Finding</div>
             <div class="beat-body">3+1 mechanisms.<br/>Four settlement modes: narrowing, bracketing, rejection, precaution.</div>
           </div>
             </div>
-          <div class="s2-contrib-overlay" data-step="7">
+          <div class="s2-contrib-overlay" data-step="6">
             <div class="pbeat contribution">
               <div class="beat-label">Contributions</div>
               <div class="beat-body" style="display:flex; flex-direction:column; gap:0;">
@@ -2709,7 +2717,7 @@
         </div>
       </div>
       <div class="opener-image"><img src="assets/study2-nsabb-web.jpg" alt="NSABB gain-of-function deliberations" /></div>
-      <div class="claim-walkthrough" data-step="5">
+      <div class="claim-walkthrough" data-show-from="5" data-show-to="5">
         <div class="cw-label">Example &middot; Claim 1</div>
         <div class="cw-claim">&ldquo;GoF research yields scientific progress.&rdquo;</div>
         <div class="cw-path">
@@ -2897,7 +2905,7 @@
           <div class="toc-link" data-toc-target="5" data-toc-step="3">Theory</div>
           <div class="toc-link" data-toc-target="5" data-toc-step="4">Methods</div>
           <div class="toc-link" data-toc-target="5" data-toc-step="5">Findings</div>
-          <div class="toc-link" data-toc-target="5" data-toc-step="7">Contributions</div>
+          <div class="toc-link" data-toc-target="5" data-toc-step="6">Contributions</div>
         </div>
         <div class="toc-col">
           <div class="toc-col-label">Study 3 &middot; Dynamic Persistence</div>
