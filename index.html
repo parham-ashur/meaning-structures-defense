@@ -1791,6 +1791,25 @@
   }
 
   /* Study 2 step-7: contribution overlay floats over the phone-feed viewport */
+  /* s06 headline scatter — step 1 */
+  .headlines-pbeat { overflow: visible !important; }
+  .headlines-scatter {
+    width: 100%;
+    padding: 4px 0;
+  }
+  .headlines-scatter .hl {
+    display: block;
+    width: 90%;
+    box-shadow: 2px 3px 10px rgba(0,0,0,0.18);
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    position: relative;
+  }
+  .headlines-scatter .hl-1 { transform: rotate(-2.2deg) translateX(-8px); z-index: 4; margin-bottom: -22px; }
+  .headlines-scatter .hl-2 { transform: rotate(2.4deg) translateX(14px); z-index: 3; margin-bottom: -22px; }
+  .headlines-scatter .hl-3 { transform: rotate(-1.4deg) translateX(-4px); z-index: 2; margin-bottom: -22px; }
+  .headlines-scatter .hl-4 { transform: rotate(1.8deg) translateX(10px); z-index: 1; }
+
   /* Contributions step: sits in normal text-frame flow as sibling of phone-feed.
      Revealed by [data-step].step-shown; phone-feed is hidden while it shows. */
   .s2-contrib-overlay {
@@ -2687,8 +2706,13 @@
           </div>
           <div class="phone-feed">
             <div class="feed-track">
-          <div class="pbeat" data-step="1">
-            <img src="assets/science-h5n1-headline.png" alt="Controversial Studies Give a Deadly Flu Virus Wings — Science, 2011" style="width:100%; max-width:1360px; border:1px solid var(--rule); border-radius:2px;" />
+          <div class="pbeat headlines-pbeat" data-step="1">
+            <div class="headlines-scatter">
+              <img class="hl hl-1" src="assets/science-h5n1-headline.png" alt="Science: Deadly Flu Virus Wings"/>
+              <img class="hl hl-2" src="assets/headline-livescience.png" alt="Killer-Flu Debate"/>
+              <img class="hl hl-3" src="assets/headline-sciam.png" alt="Contagion"/>
+              <img class="hl hl-4" src="assets/headline-time.png" alt="Bioterror"/>
+            </div>
           </div>
           <div class="pbeat rq-beat" data-step="2">
             <div class="beat-label">Research question</div>
