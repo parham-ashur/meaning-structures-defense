@@ -1796,9 +1796,12 @@
   .s2-contrib-overlay {
     flex: 1 1 0;
     min-height: 0;
-    display: flex;
+    display: none;
     align-items: center;
     transform: none !important;
+  }
+  .s2-contrib-overlay.step-shown {
+    display: flex;
   }
   section.slide.opener-nsabb:has(.s2-contrib-overlay.step-shown) .phone-feed {
     display: none;
