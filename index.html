@@ -1791,6 +1791,13 @@
   }
 
   /* Study 2 step-7: contribution overlay floats over the phone-feed viewport */
+  /* s06: collapse subtitle height on expand so headlines sit flush under title */
+  section.slide.opener-nsabb.expanded .spread-sub {
+    max-height: 0 !important;
+    margin-top: 0 !important;
+    overflow: hidden;
+    opacity: 0;
+  }
   /* s06 headline scatter — step 1, full-column height */
   .s2-headlines {
     display: none;
@@ -2724,7 +2731,7 @@
           </div>
           <div class="phone-feed">
             <div class="feed-track">
-          <span data-step="1" style="display:none" aria-hidden="true"></span>
+          <span data-step="1" style="display:block;height:100%;visibility:hidden;" aria-hidden="true"></span>
           <div class="pbeat rq-beat" data-step="2">
             <div class="beat-label">Research question</div>
             <div class="beat-body">How do expert audiences construct evaluative frameworks for contested professional claims?</div>
