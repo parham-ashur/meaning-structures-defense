@@ -1791,14 +1791,17 @@
   }
 
   /* Study 2 step-7: contribution overlay floats over the phone-feed viewport */
+  /* Contributions step: sits in normal text-frame flow as sibling of phone-feed.
+     Revealed by [data-step].step-shown; phone-feed is hidden while it shows. */
   .s2-contrib-overlay {
-    position: absolute;
-    inset: 0;
+    flex: 1 1 0;
+    min-height: 0;
     display: flex;
     align-items: center;
-    background: var(--paper);
-    z-index: 1;
-    transform: none !important; /* suppress [data-step] translateY slide */
+    transform: none !important;
+  }
+  section.slide.opener-nsabb:has(.s2-contrib-overlay.step-shown) .phone-feed {
+    display: none;
   }
   .s2-contrib-overlay .pbeat {
     position: static !important;
@@ -1806,7 +1809,6 @@
     opacity: 1 !important;
     transform: none;
     max-width: 780px;
-    width: 100%;
   }
 
   /* slide-number sits over the text column on spreads, not the image */
@@ -2707,6 +2709,7 @@
             <div class="beat-body">3+1 mechanisms.<br/>Four settlement modes: narrowing, bracketing, rejection, precaution.</div>
           </div>
             </div>
+          </div>
           <div class="s2-contrib-overlay" data-step="6">
             <div class="pbeat contribution">
               <div class="beat-label">Contributions</div>
@@ -2717,7 +2720,6 @@
               </div>
               <div class="beat-cite">Connects to Abbott 1988 &middot; Lamont 2012 &middot; J. H. Evans 2002</div>
             </div>
-          </div>
           </div>
         </div>
       </div>
