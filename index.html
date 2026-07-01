@@ -2076,13 +2076,15 @@
   /* Theory — stacked AMA paper banners + the two named concepts. Cards hug the
      images (which are ~3:1 wide) so the titles render large, not floating small. */
   .s1-theory { display: flex; flex-direction: column; gap: 20px; justify-content: center; align-items: flex-start; }
+  .s1-theory .s1-banner:nth-child(2) { transition: transform 0.45s ease; }
+  .s1-theory:has(.s1-concepts.range-on) .s1-banner:nth-child(2) { transform: translateY(-30px); }
   .s1-banner { background: #fff; border: 1px solid var(--rule-strong); border-radius: 6px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.07); padding: 10px 16px; width: fit-content; max-width: 100%;
     display: flex; align-items: center; justify-content: center; }
   .s1-banner img { height: 226px; width: auto; max-width: 100%; object-fit: contain; display: block; }
   .s1-concepts { display: flex; gap: 48px; margin-top: 12px; align-items: baseline; }
   .s1-concept { flex: 0 0 auto; }
-  .s1-concept .cn { font-size: 50px; font-style: italic; color: var(--carpet); line-height: 1.05; white-space: nowrap; }
+  .s1-concept .cn { font-size: 70px; font-style: italic; color: var(--carpet); line-height: 1.05; white-space: nowrap; }
 
   /* RQ view — shown after the icons, before the AMA banners */
   .s1-view.s1-rqview { display: flex; flex-direction: column; justify-content: center; max-width: 920px; }
