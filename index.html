@@ -2107,6 +2107,27 @@
   .s1-textview.contribution .beat-body { font-size: 48px; line-height: 1.16; color: var(--indigo); }
 
 
+
+  /* ── Navigation / TOC slide ─────────────────────────────────────── */
+  .toc-frame { padding: 90px 120px; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; }
+  .toc-eyebrow { font-size: 18px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--carpet); margin-bottom: 48px; }
+  .toc-cols { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0 56px; flex: 1; }
+  .toc-col { display: flex; flex-direction: column; border-top: 2px solid var(--ink); padding-top: 24px; }
+  .toc-col-label { font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; line-height: 1.4; min-height: 44px; }
+  .toc-link { font-size: 27px; line-height: 1.25; color: var(--ink-soft); padding: 18px 0; border-bottom: 1px solid var(--rule); cursor: pointer; transition: color 0.18s ease; font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, serif; user-select: none; }
+  .toc-link:hover { color: var(--carpet); }
+  /* ── Floating back-to-TOC button ────────────────────────────────── */
+  #toc-back-btn {
+    position: fixed; right: 52px; bottom: 52px; z-index: 2147483000;
+    display: none; align-items: center; gap: 10px;
+    padding: 15px 28px; background: var(--ink); color: var(--paper);
+    font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase;
+    border: none; cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    opacity: 0.88; transition: opacity 0.2s ease;
+  }
+  #toc-back-btn:hover { opacity: 1; }
+  #toc-back-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
 </style>
 <script src="deck-stage.js"></script><script src="animations-v2.js"></script><script src="deck-steps.js"></script><script src="deck-label.js"></script>
 </head>
@@ -2738,17 +2759,20 @@
           </div>
           <div class="pbeat" data-step="4">
             <div class="beat-label">Methods</div>
-            <div class="beat-body">140-year Vienna yearbook corpus &middot; 98 volumes &middot; 46,093 pages &middot; 1867&ndash;2009. Structural topic model (32 topics) then dynamic topic model (32 topics, 14 periods). KL divergence tracks pace and content of change.</div>
+            <div class="beat-body" style="display:flex; flex-direction:column; gap:0;">
+              <div style="padding-bottom:14px; border-bottom:1px solid var(--rule);">Data. Vienna yearbook corpus, 1867&ndash;2009.</div>
+              <div style="padding-top:14px;">Modeling. Dynamic topic model (32 topics, 14 periods). KL divergence.</div>
+            </div>
           </div>
           <div class="pbeat dwell" data-step="5">
             <div class="beat-label">Finding</div>
             <div class="beat-body">Public housing endured not by staying the same but by <em>re-instantiating</em>: municipal construction → subsidies → tenant support, while its anchorage to welfare, planning, and health held.</div>
           </div>
           <div class="pbeat contribution" data-step="6">
-            <div class="beat-label">Contribution</div>
+            <div class="beat-label">Contributions</div>
             <div class="beat-body" style="display:flex; flex-direction:column; gap:0;">
               <div style="padding:10px 0; border-top:1px solid var(--rule);">Theoretical: <em>dynamic persistence</em>.</div>
-              <div style="padding:10px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">Methodological: Dynamic Topic Modeling and diagnostic measures that track relational meaning structures over time, closing the theory-methods gap and giving future work a way to test hypotheses about institutional change.</div>
+              <div style="padding:10px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); color:var(--carpet); font-style:italic;">Dynamic Modeling of Discourse.</div>
             </div>
             <div class="beat-cite">Connects to Berger &amp; Luckmann 1966 · Meyer et al. 2021 · Dacin et al. 2010</div>
           </div>
@@ -2840,6 +2864,42 @@
         <div style="font-size: 36px; color: var(--paper);">Parham Ashur</div>
         <div class="mono" style="font-size: 24px; color: #B7BAD4; letter-spacing: 0.12em; margin-top: 6px;">
           06 JULY 2026 · EMLYON BUSINESS SCHOOL · LYON
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVIGATION / TABLE OF CONTENTS -->
+  <section class="slide paper" data-label="Navigation">
+    <div class="toc-frame">
+      <div class="toc-eyebrow">Navigate</div>
+      <div class="toc-cols">
+        <div class="toc-col">
+          <div class="toc-col-label">Overview</div>
+          <div class="toc-link" data-toc-target="3" data-toc-step="0">We live in an evaluative society</div>
+        </div>
+        <div class="toc-col">
+          <div class="toc-col-label">Study 1 &middot; What Michelin Means</div>
+          <div class="toc-link" data-toc-target="4" data-toc-step="2">Research question</div>
+          <div class="toc-link" data-toc-target="4" data-toc-step="6">Methods</div>
+          <div class="toc-link" data-toc-target="4" data-toc-step="7">Findings</div>
+        </div>
+        <div class="toc-col">
+          <div class="toc-col-label">Study 2 &middot; Evaluation under Construction</div>
+          <div class="toc-link" data-toc-target="5" data-toc-step="2">Research question</div>
+          <div class="toc-link" data-toc-target="5" data-toc-step="4">Methods</div>
+          <div class="toc-link" data-toc-target="5" data-toc-step="5">Findings</div>
+        </div>
+        <div class="toc-col">
+          <div class="toc-col-label">Study 3 &middot; Dynamic Persistence</div>
+          <div class="toc-link" data-toc-target="7" data-toc-step="2">Research question</div>
+          <div class="toc-link" data-toc-target="7" data-toc-step="4">Methods</div>
+          <div class="toc-link" data-toc-target="7" data-toc-step="5">Findings</div>
+        </div>
+        <div class="toc-col">
+          <div class="toc-col-label">Synthesis</div>
+          <div class="toc-link" data-toc-target="8" data-toc-step="0">Methodological contribution</div>
+          <div class="toc-link" data-toc-target="9" data-toc-step="0">Connection to broader conversations</div>
         </div>
       </div>
     </div>
@@ -3496,5 +3556,62 @@
 
 
 </deck-stage>
+<button id="toc-back-btn" aria-label="Back to navigation">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>
+  Navigation
+</button>
+<script>
+(function() {
+  function getTOCIndex() {
+    var slides = Array.from(document.querySelectorAll('section.slide'));
+    for (var i = 0; i < slides.length; i++) {
+      if (slides[i].getAttribute('data-label') === 'Navigation') return i;
+    }
+    return -1;
+  }
+  function getStage() { return document.querySelector('deck-stage'); }
+  function showBtn() { var b = document.getElementById('toc-back-btn'); if (b) b.style.display = 'flex'; }
+  function hideBtn() { var b = document.getElementById('toc-back-btn'); if (b) b.style.display = 'none'; }
+
+  function navToSlide(slideIdx, step) {
+    var stage = getStage(); if (!stage) return;
+    stage.goTo(slideIdx);
+    showBtn();
+    if (step > 0) {
+      setTimeout(function() {
+        var slides = Array.from(document.querySelectorAll('section.slide'));
+        var slide = slides[slideIdx];
+        if (slide && window._deckApply) { slide._curStep = step; window._deckApply(slide, step); }
+      }, 80);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('toc-back-btn');
+    if (btn) btn.addEventListener('click', function(e) {
+      e.stopPropagation(); hideBtn(); var stage = getStage(); if (stage) stage.goTo(getTOCIndex());
+    });
+
+    setTimeout(function() {
+      document.querySelectorAll('.toc-link[data-toc-target]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.stopPropagation();
+          navToSlide(parseInt(link.getAttribute('data-toc-target'), 10), parseInt(link.getAttribute('data-toc-step'), 10) || 0);
+        });
+      });
+    }, 300);
+
+    (function watchStage() {
+      var stage = getStage();
+      if (!stage) { setTimeout(watchStage, 100); return; }
+      stage.addEventListener('slidechange', function(e) {
+        var d = e.detail || {};
+        if (d.index === getTOCIndex()) { hideBtn(); return; }
+        if (d.reason && d.reason !== 'api') { hideBtn(); }
+      });
+    })();
+  });
+})();
+</script>
 </body>
 </html>

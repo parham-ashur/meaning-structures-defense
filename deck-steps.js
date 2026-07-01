@@ -133,4 +133,5 @@
   } else {
     boot();
   }
+  window._deckApply = apply;
 })();
