@@ -2128,6 +2128,13 @@
   }
   #toc-back-btn:hover { opacity: 1; }
   #toc-back-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  /* Study 2: retract image from step 5 (Methods done → stays for Findings) */
+  section.slide.opener-nsabb:has(.s2-expand.range-on) .opener-image {
+    clip-path: inset(0 0 0 100%) !important;
+    -webkit-clip-path: inset(0 0 0 100%) !important;
+    transition: clip-path 0.55s ease !important;
+  }
 </style>
 <script src="deck-stage.js"></script><script src="animations-v2.js"></script><script src="deck-steps.js"></script><script src="deck-label.js"></script>
 </head>
@@ -2640,6 +2647,7 @@
       <div class="opener-text">
         <div class="text-frame study-spread">
           <span class="outro-flag" data-step="6" data-show-from="6" style="display:none" aria-hidden="true"></span>
+          <span class="s2-expand" data-show-from="5" style="display:none" aria-hidden="true"></span>
           <div class="study-marker"><span class="tick on"></span><span class="tick on"></span><span class="tick"></span><span class="label">Study 02</span></div>
           <div class="spread-head">
             <div class="title-l serif" style="color: var(--ink); max-width: 760px; font-size: 78px; line-height: 1.0;">Evaluation under <em>Construction</em></div>
@@ -2771,7 +2779,7 @@
             <div class="beat-label">Contributions</div>
             <div class="beat-body" style="display:flex; flex-direction:column; gap:0;">
               <div style="padding:10px 0; border-top:1px solid var(--rule);">Theoretical: <em>dynamic persistence</em>.</div>
-              <div style="padding:10px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); color:var(--carpet); font-style:italic;">Dynamic Modeling of Discourse.</div>
+              <div style="padding:10px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">Methodological: <span style="color:var(--carpet); font-style:italic;">Dynamic Modeling of Discourse.</span></div>
             </div>
             <div class="beat-cite">Connects to Berger &amp; Luckmann 1966 · Meyer et al. 2021 · Dacin et al. 2010</div>
           </div>
