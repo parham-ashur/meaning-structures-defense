@@ -3248,6 +3248,51 @@
     </div>
   </section>
 
+
+  <!-- A.2d MICHELIN CRITERIA -->
+  <section class="slide appendix" data-label="A2d Michelin Criteria">
+    <div class="appendix-ribbon">Appendix · Study 01</div>
+    <div class="frame">
+      <div class="slide-header">
+        <div class="eyebrow">Study 01 · Dependent variable</div>
+        <div class="kicker">What are the Michelin criteria?</div>
+      </div>
+      <div class="rule-h" style="margin: 22px 0 28px;"></div>
+      <div style="max-width: 860px;">
+        <div style="font-size: 24px; line-height: 1.55; color: var(--muted); font-style: italic; margin-bottom: 36px; padding-left: 24px; border-left: 3px solid var(--carpet);">
+          &ldquo;Five universal criteria: the quality of the ingredients, the harmony of flavors, the mastery of techniques, the personality of the chef as expressed through their cuisine and, just as importantly, consistency both across the entire menu and over time.&rdquo;
+          <span style="display:block; margin-top: 10px; font-style: normal; font-size: 20px; color: var(--muted);">— Michelin Guide</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px 48px;">
+          <div style="padding: 14px 0; border-top: 1px solid var(--rule);">
+            <div style="font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--carpet); margin-bottom: 6px;">01</div>
+            <div style="font-size: 26px; font-weight: 500; color: var(--ink);">Quality of the ingredients</div>
+          </div>
+          <div style="padding: 14px 0; border-top: 1px solid var(--rule);">
+            <div style="font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--carpet); margin-bottom: 6px;">02</div>
+            <div style="font-size: 26px; font-weight: 500; color: var(--ink);">Harmony of flavors</div>
+          </div>
+          <div style="padding: 14px 0; border-top: 1px solid var(--rule);">
+            <div style="font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--carpet); margin-bottom: 6px;">03</div>
+            <div style="font-size: 26px; font-weight: 500; color: var(--ink);">Mastery of techniques</div>
+          </div>
+          <div style="padding: 14px 0; border-top: 1px solid var(--rule);">
+            <div style="font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--carpet); margin-bottom: 6px;">04</div>
+            <div style="font-size: 26px; font-weight: 500; color: var(--ink);">Personality of the chef as expressed through their cuisine</div>
+          </div>
+          <div style="padding: 14px 0; border-top: 1px solid var(--rule); grid-column: 1 / -1;">
+            <div style="font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--carpet); margin-bottom: 6px;">05</div>
+            <div style="font-size: 26px; font-weight: 500; color: var(--ink);">Consistency — across the entire menu and over time</div>
+          </div>
+        </div>
+        <div class="rule-h" style="margin: 28px 0 18px;"></div>
+        <div style="font-size: 22px; line-height: 1.5; color: var(--ink-soft);">
+          <b>DV operationalization.</b> Each criterion is embedded using the exact Michelin wording. A Michelin vector is constructed from these five embeddings. For each review, BERTopic surfaces topics; each topic's embedding is cosine-compared to the Michelin vector; the review's consistency score is a topic-prominence-weighted average. Score ∈ [0, 1].
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- A.3 STUDY 2 ROBUSTNESS -->
   <section class="slide appendix" data-label="A3 Study 2 Robustness">
     <div class="appendix-ribbon">Appendix · Study 02</div>
